@@ -23,7 +23,7 @@ class ValidaCPF {
    }
 
 
-   verifidaCPF() {
+   verificaCPF() {
       
       if(typeof this.cpfLimpo !== 'string') return false;
       if(this.cpfLimpo.length !== 11) return false;
@@ -39,7 +39,7 @@ class ValidaCPF {
       console.log(novoCpfEdit)
    }
 
-   criaDigito(cpfParcial) {
+   static criaDigito(cpfParcial) {
       const cpfArray = Array.from(cpfParcial);
       let regressivo = cpfArray.length + 1;
 
@@ -62,3 +62,4 @@ class ValidaCPF {
 const cpf = new ValidaCPF('705.484.450-52')
 cpf.verificaCPF();
 
+console.log('notebook lento do krlho ')
