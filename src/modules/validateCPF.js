@@ -57,9 +57,3 @@ class ValidaCPF {
       return novoCpfEdit;
    }
 }
-
-
-const cpf = new ValidaCPF('705.484.450-52')
-cpf.verificaCPF();
-
-console.log('notebook lento do krlho ')
