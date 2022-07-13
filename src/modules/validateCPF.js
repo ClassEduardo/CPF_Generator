@@ -4,10 +4,11 @@
 11 - (237 % 11) = 5 (Primeiro dígito)
 
 11 - (284 % 11) = 5 (Primeiro dígito)
+
 */
 
 
-class ValidaCPF {
+export default class ValidaCPF {
    constructor(cpfEnviado) {
       Object.defineProperty(this, 'cpfLimpo', {
          enumerable: true,
@@ -24,7 +25,6 @@ class ValidaCPF {
 
 
    verificaCPF() {
-      
       if(typeof this.cpfLimpo !== 'string') return false;
       if(this.cpfLimpo.length !== 11) return false;
       if(this.isSequencia()) return false;
@@ -39,7 +39,7 @@ class ValidaCPF {
       console.log(novoCpfEdit)
    }
 
-   static criaDigito(cpfParcial) {
+   static geraDigito(cpfParcial) {
       const cpfArray = Array.from(cpfParcial);
       let regressivo = cpfArray.length + 1;
 
@@ -50,10 +50,5 @@ class ValidaCPF {
       }, 0)
       const digito = 11 - (total % 11);
       return digito > 9 ? '0' : digito
-   }
-
-   editaCpf(novoCpf) {
-      const novoCpfEdit = novoCpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
-      return novoCpfEdit;
    }
 }

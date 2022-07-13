@@ -1,9 +1,10 @@
-import GeraCPF from './modules/GeraCPF.js'
+import GeraCPF from './modules/GeraCPF'
+
 import './assets/css/style.css'
 
 (function() {
    const gera = new GeraCPF();
-   const cpfgerado = document.querySelector('.cpf-gerado')
-   cpfgerado.innerHTML = gera.creatNewCPF()
-   console.log(cpfgerado)
-})
+   const cpfGerado = document.querySelector('.cpf-gerado');
+   cpfGerado.innerHTML = gera.geraNovoCpf();
+ })();
+ 
